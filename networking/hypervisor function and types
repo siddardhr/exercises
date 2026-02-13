@@ -1,1 +1,98 @@
+Virtualization Concepts: Hypervisors, VMs, VBS
 
+This file contains notes on virtualization technologies including hypervisors, types, functions, virtual machines (VMs), and Virtualization-Based Security (VBS). Updated daily with new learnings.
+
+1. What is Virtualization?
+
+Virtualization is the process of creating a virtual version of a resource, such as a server, desktop, storage device, or network.
+
+Benefits:
+
+Efficient resource usage
+
+Isolation between applications/OS
+
+Easy deployment and testing
+
+Security enhancements
+
+2. Hypervisors
+2.1 Definition
+
+A hypervisor is software, firmware, or hardware that creates and runs virtual machines (VMs).
+
+It sits between the physical hardware and the virtual machines.
+
+2.2 Types of Hypervisors
+Type	Name / Example	Description
+Type 1 (Bare-metal)	VMware ESXi, Microsoft Hyper-V, Xen	Runs directly on hardware. No host OS needed. High performance.
+Type 2 (Hosted)	VMware Workstation, VirtualBox	Runs on a host OS. Easier to use but slightly less efficient.
+2.3 Functions of Hypervisors
+
+Allocate CPU, memory, storage, and network to VMs
+
+Isolate VMs from each other
+
+Enable live migration of VMs
+
+Snapshot and restore VMs
+
+Monitor and manage VM performance
+
+3. Virtual Machines (VMs)
+
+VM is a software-based emulation of a physical computer.
+
+Components of a VM:
+
+Virtual CPU (vCPU)
+
+Virtual memory (vRAM)
+
+Virtual storage (vDisk)
+
+Virtual network interface card (vNIC)
+
+Advantages:
+
+Multiple OS instances on one physical machine
+
+Testing, development, and sandbox environments
+
+Resource optimization
+
+3.1 VM Lifecycle
+
+Creation
+
+Configuration (CPU, RAM, storage)
+
+Running / Pausing
+
+Snapshot / Restore
+
+Deletion
+
+4. Virtualization-Based Security (VBS)
+
+VBS uses hardware virtualization features to create an isolated memory region for security features.
+
+Provides:
+
+Credential Guard: Protects sensitive account credentials
+
+Hypervisor-protected code integrity (HVCI)
+
+Secure Kernel Mode
+
+Requirements: CPU with virtualization support (Intel VT-x or AMD-V) and Hypervisor support.
+
+5. Virtualization Examples / Tools
+
+VMware → vSphere, Workstation
+
+Microsoft Hyper-V → Hyper-V Manager, PowerShell commands
+
+Oracle VirtualBox → Desktop virtualization
+
+KVM (Kernel-based Virtual Machine) → Linux virtualization
