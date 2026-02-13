@@ -1,1 +1,104 @@
+IP, MAC, NAT, and Networking Basics
 
+This file contains notes on networking topics including IP addressing, MAC addresses, NAT, network interfaces, port numbers, and related concepts. Updated daily with new learnings.
+
+1. IP Addresses
+1.1 What is an IP Address?
+
+IP Address (Internet Protocol Address) is a unique identifier assigned to every device connected to a network.
+
+Types:
+
+IPv4: 32-bit address, e.g., 192.168.1.1
+
+IPv6: 128-bit address, e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334
+
+1.2 Private vs Public IP
+
+Private IP: Used within private networks. Not routable on the Internet.
+
+Ranges (IPv4):
+
+10.0.0.0 – 10.255.255.255
+
+172.16.0.0 – 172.31.255.255
+
+192.168.0.0 – 192.168.255.255
+
+Public IP: Routable on the Internet. Assigned by ISP.
+
+1.3 Subnetting (Basics)
+
+Divides IP ranges into sub-networks.
+
+Example:
+
+192.168.1.0/24 → 256 IPs (0–255)
+
+/24 indicates subnet mask 255.255.255.0
+
+2. MAC Addresses
+
+MAC Address (Media Access Control) is a unique identifier assigned to network interfaces.
+
+Format: XX:XX:XX:XX:XX:XX (hexadecimal)
+
+Example: 00:1A:2B:3C:4D:5E
+
+MAC addresses operate at Layer 2 (Data Link Layer) in the OSI model.
+
+3. NAT (Network Address Translation)
+3.1 What is NAT?
+
+NAT translates private IP addresses to public IP addresses so devices inside a private network can access the Internet.
+
+3.2 Types of NAT
+
+Static NAT: One-to-one mapping between private and public IP.
+
+Dynamic NAT: Maps private IPs to public IPs dynamically from a pool.
+
+PAT (Port Address Translation / NAT Overload): Many private IPs share one public IP using different ports.
+
+3.3 NAT Table Conversion Example
+Private IP	Public IP	Port
+192.168.1.10	203.0.113.5	5000
+192.168.1.11	203.0.113.5	5001
+4. Network Interfaces
+
+Network interfaces connect a device to a network.
+
+Common types:
+
+Ethernet (wired) → eth0, enp3s0
+
+Wi-Fi (wireless) → wlan0, wlp2s0
+
+Loopback → lo (127.0.0.1)
+
+4.1 Checking Interfaces (Linux Example)
+ip addr show
+
+5. Port Numbers and Programs
+
+Ports allow multiple applications to use network connections on a single device.
+
+Well-known ports (0–1023): System services
+
+HTTP → 80
+
+HTTPS → 443
+
+SSH → 22
+
+DNS → 53
+
+Registered ports (1024–49151): Applications
+
+Dynamic/Private ports (49152–65535): Temporary connections
+
+5.1 Relation to Programs
+
+A server program listens on a specific port.
+
+A client connects to the server IP + port combination.
